@@ -5,10 +5,7 @@ import lombok.Data;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 @Data
@@ -18,7 +15,11 @@ public class Manufacturer{
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private String id;
+    @Column(columnDefinition = "NVarchar(255)")
     private String name;
     private int year;
+    @Column(columnDefinition = "NVarchar(255)")
     private String country;
+    @Column(columnDefinition = "text")
+    private String url_ava;
 }
