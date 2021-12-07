@@ -3,16 +3,21 @@ package com.sub_project.ManufacturerService.controller;
 import com.sub_project.ManufacturerService.entity.Manufacturer;
 import com.sub_project.ManufacturerService.service.ManufacturerService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
 
+
 @RestController
 @RequestMapping("/manufacturers")
 public class HomeController {
+
     @Autowired
     private ManufacturerService manufacturerService;
+
 
 
     @PostMapping("/")
@@ -29,6 +34,7 @@ public class HomeController {
     @GetMapping("/")
     public List<Manufacturer> getListManuFaturers(){
         List<Manufacturer> listManu = new ArrayList<Manufacturer>();
+        listManu = manufacturerService.findAllDeparment();
         return listManu;
     }
 }

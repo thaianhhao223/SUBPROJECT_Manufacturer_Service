@@ -5,7 +5,11 @@ spring:
     application:
       name: MANUFACTURERS-SERVICE
 
-
+    config:
+      import: "optional:configserver:"
+    cloud:
+      config:
+        uri: http://localhost:8888
 eureka:
   client:
     register-with-eureka:
