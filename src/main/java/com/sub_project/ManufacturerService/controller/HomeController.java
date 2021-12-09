@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
+@CrossOrigin
 @RestController
 @RequestMapping("/manufacturers")
 public class HomeController {
@@ -31,7 +32,7 @@ public class HomeController {
 //        log.info("inside findDeparmentById method if Department controller!");
         return manufacturerService.findDeparmentById(manufacturerId);
     }
-    @GetMapping("/")
+    @GetMapping("/GetAll")
     public List<Manufacturer> getListManuFaturers(){
         List<Manufacturer> listManu = new ArrayList<Manufacturer>();
         listManu = manufacturerService.findAllDeparment();
